@@ -1,6 +1,8 @@
 #include <iostream>
 #include <conio.h>
+
 using namespace std;
+
 int val[10], val2[10];
 int n;
 
