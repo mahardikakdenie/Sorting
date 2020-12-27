@@ -1,36 +1,40 @@
 #include <iostream>
-#include <array>
-#include <algorithm>
+#include <conio.h>
 
 using namespace std;
 
-const size_t Kelompok2 = 10 ;
-
-void printOlehKelompok2(array <int,Kelompok2> &angka){
-    cout<<"Anggkaa : ";
-    for(int &a : angka){
-        cout<<a<<" ";
-    }
-    cout<<endl;
-}
-
-
 int main(int argc, char const *argv[])
 {
-    system("cls");
-    array <int, Kelompok2> angka ={9,8,5,4,0,7,6,3,2,1,};
+    int value1[100];
+    int n,z;
+    cout<<endl;
+    cout<<"Sorting Array : "<<endl;
+    cout<<"Masukan Jumlah Data yang di urutkan : ";
+    cin>>n;
+    cout<<endl;
+    
+    for(int i = 0 ; i < n ; i++){
+        cout<<"Masukan Angka Ke-"<<i+1<<" : ";
+        cin>>value1[i];
+    }
 
-    printOlehKelompok2(angka);
-
+    for(int p = n/2 ; p > 0 ; p = p/2){
+        for(int y = p ; y < n ; y++){
+            for(int x = y - p ;x >= 0 ; x -= p ){
+                if(value1[x+p] < value1[x]){
+                    z=value1[x+p];
+                    value1[x+p] = value1[x];
+                    value1[x] = z ;
+                }
+            }
+        }
+    }
     cout<<endl;
 
-    std::sort(angka.begin(),angka.end());
-    printOlehKelompok2(angka);
-    
-    cin.get();
+    cout<<"Data yang Di Urutkan : "<<endl;
+
+    for(int i = 0 ; i < n ; i++){
+        cout<<value1[i]<<endl;
+    }
     return 0;
 }
-
-
-   
-   
