@@ -6,7 +6,7 @@ using namespace std;
 int val[10], val2[10];
 int n;
 
-int Sort(int a, int b)
+void Sort(int a, int b)
 {
     int t;
     t = val[b];
@@ -14,7 +14,7 @@ int Sort(int a, int b)
     val[a] = t;
 }
 
-int input()
+void input()
 {
     cout << "Masukan Jumlah Angka= ";
     cin >> n;
